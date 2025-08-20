@@ -4,7 +4,7 @@ const searchInput = document.querySelector('.input-container input')
 const themeChanger = document.querySelector('.theme-changer')
 let allCountriesData
 
-fetch('https://restcountries.com/v3.1/all?fields=name,population,region,flags,capital,currencies,languages')
+fetch('https://restcountries.com/v3.1/all')
     .then((res) => res.json())
     .then(data =>{
         renderCountries(data)
@@ -12,7 +12,7 @@ fetch('https://restcountries.com/v3.1/all?fields=name,population,region,flags,ca
     })
 
 filter.addEventListener('change', (e) => {
-    fetch(`https://restcountries.com/v3.1/region/${filter.value}?fields=name,population,region,flags,capital,currencies,languages`)
+    fetch(`https://restcountries.com/v3.1/region/${filter.value}`)
         .then((res) => res.json())
         .then(renderCountries)
 })
@@ -59,6 +59,7 @@ themeChanger.addEventListener('click', () => {
         themeChanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
 
 
