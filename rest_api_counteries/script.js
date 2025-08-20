@@ -13,6 +13,7 @@ fetch('https://restcountries.com/v3.1/all')
 
 filter.addEventListener('change', (e) => {
     const region = e.target.value;
+console.log("Region selected:", e.target.value);
   if (region === "") {
     renderCountries(allCountriesData);
   } else {
@@ -63,6 +64,7 @@ themeChanger.addEventListener('click', () => {
         themeChanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
 
 
