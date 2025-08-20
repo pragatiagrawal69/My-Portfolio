@@ -2,13 +2,13 @@ const countriesContainer = document.querySelector('.countries-container')
 const filter = document.querySelector('.filter')
 const searchInput = document.querySelector('.input-container input')
 const themeChanger = document.querySelector('.theme-changer')
-let allCountriesData
+let allCountriesData[]
 
 fetch('https://restcountries.com/v3.1/all')
     .then((res) => res.json())
     .then(data =>{
-        renderCountries(data)
         allCountriesData = data
+        renderCountries(allCountriesData)
     })
 
 filter.addEventListener('change', (e) => {
@@ -20,9 +20,9 @@ filter.addEventListener('change', (e) => {
 function renderCountries(data) {
     countriesContainer.innerHTML = ''
     data.forEach((country) => {
-        const countryCard = document.createElement('a')
+        const countryCard = document.createElement('div')
         countryCard.classList.add('country')
-        countryCard.href = `/country.html?name=${country.name?.common || 'Unknown' }`
+        
 
         countryCard.innerHTML = `
             <img src="${country.flags?.svg}" alt="">
@@ -59,6 +59,7 @@ themeChanger.addEventListener('click', () => {
         themeChanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
 
 
