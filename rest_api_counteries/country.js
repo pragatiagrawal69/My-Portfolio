@@ -11,7 +11,7 @@ const countryCurrencies = document.querySelector('.currencies')
 const countryLanguages = document.querySelector('.languages')
 const borderCountries = document.querySelector('.border-countries')
 
-fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
+fetch(`https://restcountries.com/v3.1/name/${countryName}`)
     .then((res) => res.json())
     .then(([country]) => {
         flagImage.src = country.flags.svg
@@ -72,4 +72,5 @@ themeButton.addEventListener('click', () => {
         themeButton.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
