@@ -7,7 +7,7 @@ let allCountriesData=[]
 fetch('https://restcountries.com/v3.1/all')
     .then((res) => res.json())
     .then(data =>{
-        console.log("API data"data)
+        console.log("API data",data)
         allCountriesData = data
         renderCountries(allCountriesData)
     })
@@ -65,6 +65,7 @@ themeChanger.addEventListener('click', () => {
         themeChanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
 
 
