@@ -2,7 +2,7 @@ const countriesContainer = document.querySelector('.countries-container')
 const filter = document.querySelector('.filter')
 const searchInput = document.querySelector('.input-container input')
 const themeChanger = document.querySelector('.theme-changer')
-let allCountriesData[]
+let allCountriesData=[]
 
 fetch('https://restcountries.com/v3.1/all')
     .then((res) => res.json())
@@ -63,11 +63,4 @@ themeChanger.addEventListener('click', () => {
         themeChanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
-
-
-
-
-
-
-
 
