@@ -16,7 +16,7 @@ filter.addEventListener('change', (e) => {
   if (region === "") {
     renderCountries(allCountriesData);
   } else {
-    const filtered = allCountriesData.filter(c => c.region?.toLowerCase() === region);
+    const filtered = allCountriesData.filter(c => c.region?.toLowerCase() === region.toLowerCase());
     renderCountries(filtered);
   }
 })
@@ -63,6 +63,7 @@ themeChanger.addEventListener('click', () => {
         themeChanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
 
 
