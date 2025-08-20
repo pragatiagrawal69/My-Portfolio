@@ -12,9 +12,13 @@ fetch('https://restcountries.com/v3.1/all')
     })
 
 filter.addEventListener('change', (e) => {
-    fetch(`https://restcountries.com/v3.1/region/${filter.value}`)
-        .then((res) => res.json())
-        .then(renderCountries)
+    const region = e.target.value;
+  if (region === "Filter by Region") {
+    renderCountries(allCountriesData);
+  } else {
+    const filtered = allCountriesData.filter(c => c.region === region);
+    renderCountries(filtered);
+  }
 })
 
 function renderCountries(data) {
@@ -59,6 +63,7 @@ themeChanger.addEventListener('click', () => {
         themeChanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
 
 
