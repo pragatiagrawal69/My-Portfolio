@@ -44,7 +44,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
                    
                     const borderCountryTag = document.createElement('a')
                     borderCountryTag.innerText= borderCountry.name.common
-                    borderCountryTag.href = `country.html?name=${borderCountry.name.common}`
+                    borderCountryTag.href = `country.html?name=${borderCountry.name.official}`
                     borderCountries.append(borderCountryTag)
                 })
                 
@@ -72,5 +72,6 @@ themeButton.addEventListener('click', () => {
         themeButton.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
 
