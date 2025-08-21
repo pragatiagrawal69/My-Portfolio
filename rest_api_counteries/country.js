@@ -45,6 +45,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
           .then(([borderCountry]) => {
             const borderCountryTag = document.createElement('div')
             borderCountryTag.innerText = borderCountry.name.common
+            borderCountryTag.classList.add('border-country')
             borderCountryTag.addEventListener('click', () => {
           window.location.href = `/rest_api_counteries/country.html?name=${encodeURIComponent(borderCountry.name.common)}`
         })
@@ -75,6 +76,7 @@ themeButton.addEventListener('click', () => {
     themeButton.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
   }
 })
+
 
 
 
