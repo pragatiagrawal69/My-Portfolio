@@ -43,11 +43,10 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
         fetch(`https://restcountries.com/v3.1/alpha/${border}`)
           .then(res => res.json())
           .then(([borderCountry]) => {
-            const borderCountryTag = document.createElement('div')
+           const borderCountryTag = document.createElement('a')
             borderCountryTag.innerText = borderCountry.name.common
-            borderCountryTag.classList.add('border-countries')
-            borderCountryTag.addEventListener('click', () => {
-          window.location.href = `/rest_api_counteries/country.html?name=${encodeURIComponent(borderCountry.name.common)}`
+            borderCountryTag.href = `/rest_api_counteries/country.html?name=${borderCountry.name.common}`
+            borderCountries.append(borderCountryTag)
         })
             borderCountries.append(borderCountryTag)
           })
@@ -76,6 +75,7 @@ themeButton.addEventListener('click', () => {
     themeButton.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
   }
 })
+
 
 
 
