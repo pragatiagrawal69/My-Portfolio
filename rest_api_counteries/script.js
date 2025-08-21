@@ -22,7 +22,7 @@ function renderCountries(data) {
     data.forEach((country) => {
         const countryCard = document.createElement('a')
         countryCard.classList.add('country')
-        countryCard.href = `/country.html?name=${country.name.common}`
+        countryCard.href = `/rest_api_counteries/country.html?name=${country.name.common}`
         console.log(countryCard)
         countryCard.innerHTML = `
             <img src="${country.flags?.svg}" alt="">
@@ -59,6 +59,7 @@ themeChanger.addEventListener('click', () => {
         themeChanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
 
 
