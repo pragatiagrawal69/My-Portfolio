@@ -48,11 +48,10 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
             borderCountryTag.href = `/rest_api_counteries/country.html?name=${borderCountry.name.common}`
             borderCountries.append(borderCountryTag)
         })
-            borderCountries.append(borderCountryTag)
-          })
+           
       })
     }
-  })
+
 
 // 🌙 Theme Toggle
 const themeButton = document.querySelector('header h5')
@@ -75,6 +74,7 @@ themeButton.addEventListener('click', () => {
     themeButton.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
   }
 })
+
 
 
 
