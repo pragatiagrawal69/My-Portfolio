@@ -23,7 +23,7 @@ function renderCountries(data) {
         const countryCard = document.createElement('a')
         countryCard.classList.add('country')
         countryCard.href = `/country.html?name=${country.name.common}`
-
+        console.log(countryCard)
         countryCard.innerHTML = `
             <img src="${country.flags?.svg}" alt="">
             <div class="card-content">
@@ -59,6 +59,7 @@ themeChanger.addEventListener('click', () => {
         themeChanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
     }
 })
+
 
 
 
