@@ -51,7 +51,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
            
       })
     }
-
+  })
 
 // 🌙 Theme Toggle
 const themeButton = document.querySelector('header h5')
@@ -74,6 +74,7 @@ themeButton.addEventListener('click', () => {
     themeButton.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode'
   }
 })
+
 
 
 
