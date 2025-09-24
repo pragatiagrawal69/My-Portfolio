@@ -179,4 +179,10 @@ margin-top: 20px;
              left: 130px;
                 bottom: 489px;
 }
+
 }
+@media (max-width:360px){
+    .face{
+        bottom:512px;}
+}
+
